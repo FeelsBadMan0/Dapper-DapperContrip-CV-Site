@@ -1,0 +1,18 @@
+﻿@model List<ARSProje.DapperCvAppDTO.DTOs.InterestDtos.InterestListDto>
+<section class="resume-section" id="interests">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Hobiler</h2>
+        <ul class="fa-ul mb-0">
+            @foreach (var interest in Model)
+            {
+                <li>
+                    <span class="fa-li"><i class="fas fa-check"></i></span>
+                    @interest.Description
+                </li>
+
+            }
+
+        </ul>
+        
+    </div>
+</section>

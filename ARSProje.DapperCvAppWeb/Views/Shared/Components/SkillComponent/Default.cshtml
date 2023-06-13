@@ -1,0 +1,19 @@
+﻿@model List< ARSProje.DapperCvAppDTO.DTOs.SkillDtos.SkillListDto>
+<section class="resume-section" id="skills">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Programlama Bilgisi</h2>
+
+
+        <ul class="fa-ul mb-0">
+            @foreach (var skl in Model)
+            {
+                <li>
+                    <span class="fa-li"><i class="fas fa-check"></i></span>
+                    @skl.Description
+                </li>
+                
+            }
+            
+        </ul>
+    </div>
+</section>

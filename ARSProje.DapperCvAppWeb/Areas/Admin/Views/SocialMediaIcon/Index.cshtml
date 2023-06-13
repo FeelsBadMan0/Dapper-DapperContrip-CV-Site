@@ -1,0 +1,32 @@
+﻿@model List<SocialMediaIconListDto>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="text-right mb-2">
+    <a asp-action="Add" asp-controller="SocialMediaIcon" class="btn btn-outline-dark">Yeni Deneyim</a>
+</div>
+<table class="table table-hover table-striped table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>İkon Bilgisi</th>
+            <th>Link Bilgisi</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Icon</td>
+                <td>@item.Link</td>
+                <td>
+                    <a asp-action="Update" asp-controller="SocialMediaIcon" asp-route-id="@item.Id" class="btn btn-warning btn-sm mr-1">Güncelle</a>
+                    <a asp-action="Delete" asp-controller="SocialMediaIcon" asp-route-id="@item.Id" onclick=" return confirm('Silmek istediğinize emin misiniz?')" class="btn btn-danger btn-sm">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

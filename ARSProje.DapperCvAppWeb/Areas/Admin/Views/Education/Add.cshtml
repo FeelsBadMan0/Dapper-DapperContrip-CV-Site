@@ -1,0 +1,46 @@
+﻿@model EducationAddDto
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="Add" asp-controller="Education">
+    <div class="form-group">
+        <label>
+            Eğitim Aldığı Kurum :
+            <span asp-validation-for="@Model.Title" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>
+            Fakülte :
+            <span asp-validation-for="@Model.SubTitle" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.SubTitle" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>
+            Derecesi :
+            <span asp-validation-for="@Model.Description" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>
+           Başlangıç Tarihi :
+            <span asp-validation-for="@Model.StartDate" class="text-danger"></span>
+        </label>
+        <input type="date" asp-for="@Model.StartDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>
+            Bitiş Tarihi :
+        </label>
+        <input type="date" asp-for="@Model.EndDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Kaydet</button>
+    </div>
+
+</form>
